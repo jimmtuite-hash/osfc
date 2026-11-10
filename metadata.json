@@ -1,0 +1,6 @@
+{
+  "name": "Order of Saints Francis and Clare",
+  "description": "Official website and digital governing documents for the Order of Saints Francis and Clare (OSFC), a dispersed Franciscan religious order within the Liberal Catholic Apostolic Church.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

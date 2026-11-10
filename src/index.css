@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #854d0e;
+  color: #fef3c7;
+}
+
+/* Franciscan Front Cover & Manuscript Aesthetic Utilities */
+.parchment-bg {
+  background-color: #FAF6ED;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(217, 119, 6, 0.04) 0%, transparent 75%),
+    radial-gradient(ellipse at 100% 100%, rgba(120, 53, 15, 0.04) 0%, transparent 60%);
+}
+
+.dark .parchment-bg {
+  background-color: #17130F;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(217, 119, 6, 0.06) 0%, transparent 75%),
+    radial-gradient(ellipse at 100% 100%, rgba(120, 53, 15, 0.08) 0%, transparent 60%);
+}
+
+/* Double Gilded Book Border echoing Front Cover */
+.gilded-frame {
+  position: relative;
+  border: 1px solid rgba(180, 134, 40, 0.45);
+  box-shadow: 
+    0 0 0 3px #FAF6ED,
+    0 0 0 4px rgba(180, 134, 40, 0.35),
+    0 4px 20px -2px rgba(44, 26, 17, 0.08);
+}
+
+.dark .gilded-frame {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 
+    0 0 0 3px #17130F,
+    0 0 0 4px rgba(212, 175, 55, 0.25),
+    0 4px 25px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Ornamental Parchment Panel */
+.parchment-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6DCB8;
+  box-shadow: 0 2px 12px -2px rgba(74, 44, 18, 0.06);
+}
+
+.dark .parchment-card {
+  background-color: #1F1A14;
+  border: 1px solid #3D3222;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Cross divider with gold hairlines */
+.cross-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #B48628;
+}
+
+.cross-divider::before,
+.cross-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(180, 134, 40, 0.35);
+}
+
+.cross-divider:not(:empty)::before {
+  margin-right: 1.25rem;
+}
+
+.cross-divider:not(:empty)::after {
+  margin-left: 1.25rem;
+}
+
+/* Illuminated initial letter */
+.illuminated-dropcap::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 0.85;
+  float: left;
+  margin-top: 0.15rem;
+  margin-right: 0.65rem;
+  color: #854D0E;
+  text-shadow: 1px 1px 0px rgba(217, 119, 6, 0.2);
+}
+
+.dark .illuminated-dropcap::first-letter {
+  color: #D97706;
+}
